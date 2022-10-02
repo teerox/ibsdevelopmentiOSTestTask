@@ -14,6 +14,9 @@
 		0457A77928E98EDB00EE46CB /* IBSdevelopmentiOSTestTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0457A77828E98EDB00EE46CB /* IBSdevelopmentiOSTestTaskTests.swift */; };
 		0457A78328E98EDB00EE46CB /* IBSdevelopmentiOSTestTaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0457A78228E98EDB00EE46CB /* IBSdevelopmentiOSTestTaskUITests.swift */; };
 		0457A78528E98EDB00EE46CB /* IBSdevelopmentiOSTestTaskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0457A78428E98EDB00EE46CB /* IBSdevelopmentiOSTestTaskUITestsLaunchTests.swift */; };
+		0457A79328E9921000EE46CB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0457A79228E9921000EE46CB /* NetworkManager.swift */; };
+		0457A79628E9933100EE46CB /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0457A79528E9933100EE46CB /* ResponseModel.swift */; };
+		0457A79928E9957100EE46CB /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0457A79828E9957100EE46CB /* Repository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		0457A77E28E98EDB00EE46CB /* IBSdevelopmentiOSTestTaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IBSdevelopmentiOSTestTaskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0457A78228E98EDB00EE46CB /* IBSdevelopmentiOSTestTaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBSdevelopmentiOSTestTaskUITests.swift; sourceTree = "<group>"; };
 		0457A78428E98EDB00EE46CB /* IBSdevelopmentiOSTestTaskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBSdevelopmentiOSTestTaskUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0457A79228E9921000EE46CB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		0457A79528E9933100EE46CB /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
+		0457A79828E9957100EE46CB /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,9 @@
 		0457A76628E98ED700EE46CB /* IBSdevelopmentiOSTestTask */ = {
 			isa = PBXGroup;
 			children = (
+				0457A79728E9955E00EE46CB /* Repository */,
+				0457A79428E9932200EE46CB /* Model */,
+				0457A79128E991F800EE46CB /* NetworkManager */,
 				0457A76728E98ED700EE46CB /* IBSdevelopmentiOSTestTaskApp.swift */,
 				0457A76928E98ED700EE46CB /* ContentView.swift */,
 				0457A76B28E98EDB00EE46CB /* Assets.xcassets */,
@@ -125,6 +134,30 @@
 				0457A78428E98EDB00EE46CB /* IBSdevelopmentiOSTestTaskUITestsLaunchTests.swift */,
 			);
 			path = IBSdevelopmentiOSTestTaskUITests;
+			sourceTree = "<group>";
+		};
+		0457A79128E991F800EE46CB /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				0457A79228E9921000EE46CB /* NetworkManager.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		0457A79428E9932200EE46CB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0457A79528E9933100EE46CB /* ResponseModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0457A79728E9955E00EE46CB /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				0457A79828E9957100EE46CB /* Repository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +290,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0457A79328E9921000EE46CB /* NetworkManager.swift in Sources */,
 				0457A76A28E98ED700EE46CB /* ContentView.swift in Sources */,
+				0457A79928E9957100EE46CB /* Repository.swift in Sources */,
+				0457A79628E9933100EE46CB /* ResponseModel.swift in Sources */,
 				0457A76828E98ED700EE46CB /* IBSdevelopmentiOSTestTaskApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,7 +470,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -463,7 +499,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
