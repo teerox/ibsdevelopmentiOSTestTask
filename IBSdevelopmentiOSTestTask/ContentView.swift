@@ -8,9 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var viewModel: ViewModel = ViewModel()
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ZStack {
+            if viewModel.loginSuccess {
+                VStack {
+                    Text("Helloo")
+                }
+            } else {
+                Loginview(viewModel: viewModel)
+            }
+        }
     }
 }
 
