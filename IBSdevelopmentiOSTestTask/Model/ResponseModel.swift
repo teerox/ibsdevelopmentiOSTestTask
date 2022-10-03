@@ -9,8 +9,8 @@ import Foundation
 
 // MARK: - ResponseModel
 struct ResponseModel: Codable {
-    let results: [Result]
-    let info: Info
+    let results: [ResultModel]
+    let info: Info?
 }
 
 // MARK: - Info
@@ -21,7 +21,7 @@ struct Info: Codable {
 }
 
 // MARK: - Result
-struct Result: Codable {
+struct ResultModel: Codable {
     let gender: String?
     let name: Name?
     let location: Location?

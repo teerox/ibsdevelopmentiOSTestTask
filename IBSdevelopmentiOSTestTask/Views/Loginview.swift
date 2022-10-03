@@ -16,7 +16,7 @@ struct Loginview: View {
             Text("Login")
                 .bold()
                 .font(.title)
-            VStack{
+            VStack(spacing:0){
                 FloatingTextField(placeHolder: "Email",
                                   text:$viewModel.email,
                                   strokeColor: $viewModel.emailTextFieldColor,

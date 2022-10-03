@@ -12,10 +12,8 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            if viewModel.loginSuccess {
-                VStack {
-                    Text("Helloo")
-                }
+            if !viewModel.loginSuccess {
+                Bodyview(viewModel: viewModel)
             } else {
                 Loginview(viewModel: viewModel)
             }
