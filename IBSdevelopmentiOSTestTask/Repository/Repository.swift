@@ -8,7 +8,17 @@
 import Foundation
 import Combine
 
-class Repository {
+protocol RequestProtocol {
+    func fetchAllData(counts: [Int]) -> AnyPublisher<[ResultModel], Error>
+}
+
+extension  RequestProtocol {
+    func fetchAllData(counts: [Int] = [1,2,3]) -> AnyPublisher<[ResultModel], Error> {
+      fetchAllData(counts: counts)
+   }
+}
+
+class Repository: RequestProtocol {
     
     private let networkManger: ServiceProtocol!
     private var cancellableSet: Set<AnyCancellable> = []
@@ -21,10 +31,10 @@ class Repository {
         self.networkManger = networkManger
     }
     
-    func fetchAllData(counts: [Int] = [1,2,3]) -> AnyPublisher<[Result], Error> {
+    func fetchAllData(counts: [Int] = [1,2,3]) -> AnyPublisher<[ResultModel], Error> {
         let result: AnyPublisher<ResponseModel, Error> = networkManger.makeReques(url: "/api",method: .get)
         
-       return counts.reduce(Optional<AnyPublisher<[Result], Error>>.none) { state, id in
+       return counts.reduce(Optional<AnyPublisher<[ResultModel], Error>>.none) { state, id in
             guard let state = state
             else {
                 return result

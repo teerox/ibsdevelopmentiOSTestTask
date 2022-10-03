@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SingleUserView: View {
-    var result: Result? = nil
+    var result: ResultModel? = nil
     var body: some View {
         VStack {
             HStack(alignment:.top) {

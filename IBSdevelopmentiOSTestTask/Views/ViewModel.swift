@@ -12,7 +12,7 @@ import SwiftUI
 final class ViewModel: ObservableObject {
     
     private var publishers = Set<AnyCancellable>()
-    private let repository = Repository()
+    private let repository: RequestProtocol!
     // Input values from view
     @Published var email = ""
     @Published var password = ""
@@ -24,10 +24,11 @@ final class ViewModel: ObservableObject {
     @Published var emailErrorMessage = "Invalid Email"
     @Published var loginSuccess = false
     @Published var searchText = ""
-    @Published var allData: [Result] = []
-    @Published var searchResult: [Result] = []
+    @Published var allData: [ResultModel] = []
+    @Published var searchResult: [ResultModel] = []
     
-    init() {
+    init(with repository: RequestProtocol = Repository()) {
+        self.repository = repository
         $searchText
             .map({ (string) -> String? in
                 if string.isEmpty {
@@ -107,7 +108,7 @@ final class ViewModel: ObservableObject {
     }
     
     private func searchItems(searchText: String) {
-        var searchResults: [Result] {
+        var searchResults: [ResultModel] {
              if searchText.isEmpty {
                  return allData
              } else {
