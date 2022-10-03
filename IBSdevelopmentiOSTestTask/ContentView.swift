@@ -13,9 +13,7 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             if viewModel.loginSuccess {
-                VStack {
-                    Text("Helloo")
-                }
+                Bodyview(viewModel: viewModel)
             } else {
                 Loginview(viewModel: viewModel)
             }

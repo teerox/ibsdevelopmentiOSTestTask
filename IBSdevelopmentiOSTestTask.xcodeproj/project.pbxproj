@@ -20,6 +20,8 @@
 		0457A79C28E9BA3F00EE46CB /* Loginview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0457A79B28E9BA3F00EE46CB /* Loginview.swift */; };
 		0457A79F28E9BABB00EE46CB /* FloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0457A79E28E9BABB00EE46CB /* FloatingTextField.swift */; };
 		0457A7A128E9D47C00EE46CB /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0457A7A028E9D47C00EE46CB /* ViewModel.swift */; };
+		0457A7A528E9F39700EE46CB /* SingleUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0457A7A428E9F39700EE46CB /* SingleUserView.swift */; };
+		0457A7A728E9F92300EE46CB /* Bodyview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0457A7A628E9F92300EE46CB /* Bodyview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		0457A79B28E9BA3F00EE46CB /* Loginview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loginview.swift; sourceTree = "<group>"; };
 		0457A79E28E9BABB00EE46CB /* FloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTextField.swift; sourceTree = "<group>"; };
 		0457A7A028E9D47C00EE46CB /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		0457A7A428E9F39700EE46CB /* SingleUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleUserView.swift; sourceTree = "<group>"; };
+		0457A7A628E9F92300EE46CB /* Bodyview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bodyview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +177,7 @@
 			children = (
 				0457A79B28E9BA3F00EE46CB /* Loginview.swift */,
 				0457A7A028E9D47C00EE46CB /* ViewModel.swift */,
+				0457A7A628E9F92300EE46CB /* Bodyview.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				0457A79E28E9BABB00EE46CB /* FloatingTextField.swift */,
+				0457A7A428E9F39700EE46CB /* SingleUserView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -315,6 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0457A7A728E9F92300EE46CB /* Bodyview.swift in Sources */,
 				0457A79C28E9BA3F00EE46CB /* Loginview.swift in Sources */,
 				0457A79328E9921000EE46CB /* NetworkManager.swift in Sources */,
 				0457A76A28E98ED700EE46CB /* ContentView.swift in Sources */,
@@ -322,6 +329,7 @@
 				0457A79F28E9BABB00EE46CB /* FloatingTextField.swift in Sources */,
 				0457A79628E9933100EE46CB /* ResponseModel.swift in Sources */,
 				0457A7A128E9D47C00EE46CB /* ViewModel.swift in Sources */,
+				0457A7A528E9F39700EE46CB /* SingleUserView.swift in Sources */,
 				0457A76828E98ED700EE46CB /* IBSdevelopmentiOSTestTaskApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

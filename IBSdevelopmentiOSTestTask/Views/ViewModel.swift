@@ -12,6 +12,7 @@ import SwiftUI
 final class ViewModel: ObservableObject {
     
     private var publishers = Set<AnyCancellable>()
+    private let repository = Repository()
     // Input values from view
     @Published var email = ""
     @Published var password = ""
@@ -22,10 +23,25 @@ final class ViewModel: ObservableObject {
     @Published var passwordErrormessage = "Wrong Passowrd"
     @Published var emailErrorMessage = "Invalid Email"
     @Published var loginSuccess = false
-
+    @Published var searchText = ""
+    @Published var allData: [Result] = []
+    @Published var searchResult: [Result] = []
     
     init() {
-      
+        $searchText
+            .map({ (string) -> String? in
+                if string.isEmpty {
+                    self.searchResult = self.allData
+                    return nil
+                }
+                return string
+            }) // prevents sending numerous requests and sends nil if the count of the characters is less than 1.
+            .compactMap{ $0 } // removes the nil values so the search string does not get passed down to the publisher chain
+            .sink { (_) in
+                //
+            } receiveValue: { [self] (searchField) in
+                searchItems(searchText: searchField)
+            }.store(in: &publishers)
     }
     
     var isUserEmailValid: AnyPublisher<Bool, Never> {
@@ -78,5 +94,28 @@ final class ViewModel: ObservableObject {
             .receive(on: RunLoop.main)
             .assign(to: \.loginSuccess, on: self)
             .store(in: &publishers)
+    }
+    
+    func getAllData() {
+        repository.fetchAllData()
+            .sink { _ in
+            } receiveValue: { res in
+                self.searchResult = res
+                self.allData = res
+            }
+            .store(in: &publishers)
+    }
+    
+    private func searchItems(searchText: String) {
+        var searchResults: [Result] {
+             if searchText.isEmpty {
+                 return allData
+             } else {
+                 return allData.filter {
+                     $0.name?.first?.contains(searchText) ?? false || $0.name?.last?.contains(searchText) ?? false
+                 }
+             }
+         }
+        self.searchResult = searchResults
     }
 }
