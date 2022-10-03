@@ -31,7 +31,9 @@ class Repository: RequestProtocol {
         self.networkManger = networkManger
     }
     
-    func fetchAllData(counts: [Int] = [1,2,3]) -> AnyPublisher<[ResultModel], Error> {
+    /// To make a call three times using an array of Number from 1 to 3
+    /// then using reduce from the combine frame work to make the request 3 times to get all data at once
+    func fetchAllData(counts: [Int]) -> AnyPublisher<[ResultModel], Error> {
         let result: AnyPublisher<ResponseModel, Error> = networkManger.makeReques(url: "/api",method: .get)
         
        return counts.reduce(Optional<AnyPublisher<[ResultModel], Error>>.none) { state, id in

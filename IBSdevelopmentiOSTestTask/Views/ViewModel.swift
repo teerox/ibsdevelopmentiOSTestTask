@@ -45,7 +45,8 @@ final class ViewModel: ObservableObject {
             }.store(in: &publishers)
     }
     
-    var isUserEmailValid: AnyPublisher<Bool, Never> {
+    /// Validate Email format
+    private var isUserEmailValid: AnyPublisher<Bool, Never> {
         $email
             .map { email in
                 let emailPredicate = NSPredicate(format:"SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")
@@ -62,7 +63,8 @@ final class ViewModel: ObservableObject {
             .eraseToAnyPublisher()
     }
     
-    var isPasswordValid: AnyPublisher<Bool, Never> {
+    /// Validate Password
+    private var isPasswordValid: AnyPublisher<Bool, Never> {
         $password
             .map { password in
                 if password.count >= 6 {
@@ -78,7 +80,8 @@ final class ViewModel: ObservableObject {
             .eraseToAnyPublisher()
     }
     
-    var isLoginValid: AnyPublisher<Bool, Never> {
+    ///Validate Email and password to trigger login
+    private var isLoginValid: AnyPublisher<Bool, Never> {
         Publishers.CombineLatest(
             isUserEmailValid,
             isPasswordValid)
@@ -90,6 +93,7 @@ final class ViewModel: ObservableObject {
         .eraseToAnyPublisher()
     }
     
+    /// Log User in
     func login() {
         isLoginValid
             .receive(on: RunLoop.main)
@@ -97,6 +101,7 @@ final class ViewModel: ObservableObject {
             .store(in: &publishers)
     }
     
+    /// Fetch Data from endpoint
     func getAllData() {
         repository.fetchAllData()
             .sink { _ in
@@ -107,6 +112,7 @@ final class ViewModel: ObservableObject {
             .store(in: &publishers)
     }
     
+    /// Search query implementation
     private func searchItems(searchText: String) {
         var searchResults: [ResultModel] {
              if searchText.isEmpty {
