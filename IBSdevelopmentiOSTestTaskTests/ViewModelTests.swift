@@ -130,7 +130,7 @@ class ViewModelTests: XCTestCase {
     func testPasswordErrorFieldIsShown() {
         viewModelToTest.email = "oduekene@gmail.com"
         viewModelToTest.password = "12345"
-        let expectation = XCTestExpectation(description: "Password is wrong")
+        let expectation = XCTestExpectation(description: "Password Error Field is shown")
         
         viewModelToTest.login()
         viewModelToTest.isLoginValid.sink { _ in
@@ -144,7 +144,7 @@ class ViewModelTests: XCTestCase {
     func testEmailErrorFieldIsShown() {
         viewModelToTest.email = "oduekene.com"
         viewModelToTest.password = "123456"
-        let expectation = XCTestExpectation(description: "Password is wrong")
+        let expectation = XCTestExpectation(description: "Email Error Field is shown")
         
         viewModelToTest.login()
         viewModelToTest.isLoginValid.sink { _ in
@@ -157,7 +157,7 @@ class ViewModelTests: XCTestCase {
     func testPasswordErrorFieldIsNotShown() {
         viewModelToTest.email = "oduekene@gmail.com"
         viewModelToTest.password = "123456"
-        let expectation = XCTestExpectation(description: "Password is wrong")
+        let expectation = XCTestExpectation(description: "Password Error Field is not shown")
         
         viewModelToTest.login()
         viewModelToTest.isLoginValid.sink { _ in
@@ -171,7 +171,7 @@ class ViewModelTests: XCTestCase {
     func testEmailErrorFieldIsNotShown() {
         viewModelToTest.email = "oduekene@gmail.com"
         viewModelToTest.password = "123456"
-        let expectation = XCTestExpectation(description: "Password is wrong")
+        let expectation = XCTestExpectation(description: "Email Error Field is not shown")
         
         viewModelToTest.login()
         viewModelToTest.isLoginValid.sink { _ in

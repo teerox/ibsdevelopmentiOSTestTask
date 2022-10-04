@@ -12,7 +12,7 @@ struct SingleUserView: View {
     var body: some View {
         VStack {
             HStack(alignment:.top) {
-                AsyncImage(url: URL(string: result?.picture?.medium ?? "https://www.hackingwithswift.com/img/paul-2.png")) { image in
+                AsyncImage(url: URL(string: result?.picture?.medium ?? "")) { image in
                     image.resizable()
                 } placeholder: {
                     Color.red
@@ -21,12 +21,12 @@ struct SingleUserView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 25))
                 
                 VStack(alignment:.leading,spacing: 5) {
-                    Text("\(result?.name?.first ?? "Anthony") \(result?.name?.last ?? "Odu")")
+                    Text("\(result?.name?.first ?? "") \(result?.name?.last ?? "")")
                         .font(.title)
                         .bold()
-                    Text("\(result?.email ?? "oduekene@gmail.com")")
+                    Text("\(result?.email ?? "")")
                         .font(.body)
-                    Text("\(result?.location?.street?.number ?? 0) \(result?.location?.street?.name ?? "Alulu John Okoh Street") \(result?.location?.city ?? "Ikeja") \(result?.location?.state ?? "Lagos") \(result?.location?.country ?? "Nigeria")")
+                    Text("\(result?.location?.street?.number ?? 0) \(result?.location?.street?.name ?? "") \(result?.location?.city ?? "") \(result?.location?.state ?? "") \(result?.location?.country ?? "")")
                         .font(.body)
                         .fixedSize(horizontal: false, vertical: true)
                 }
