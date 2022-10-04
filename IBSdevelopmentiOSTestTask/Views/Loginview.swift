@@ -47,10 +47,6 @@ struct Loginview: View {
                    .background(Color("buttonColor"))
                    .cornerRadius(10)
                   .padding()
-                
-                ProgressView()
-                    .progressViewStyle(CircularProgressViewStyle())
-                    .foregroundColor(Color("buttonColor"))
             }
         }
     }
