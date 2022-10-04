@@ -46,9 +46,6 @@ struct Bodyview: View {
                     ForEach(viewModel.searchResult, id: \.login?.uuid) { item in
                         SingleUserView(result: item)
                     }
-                    .refreshable {
-                        viewModel.getAllData()
-                    }
                 }
             }
         }
