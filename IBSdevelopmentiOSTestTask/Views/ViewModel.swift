@@ -81,7 +81,7 @@ final class ViewModel: ObservableObject {
     }
     
     ///Validate Email and password to trigger login
-    private var isLoginValid: AnyPublisher<Bool, Never> {
+    var isLoginValid: AnyPublisher<Bool, Never> {
         Publishers.CombineLatest(
             isUserEmailValid,
             isPasswordValid)
